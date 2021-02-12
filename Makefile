@@ -151,6 +151,7 @@ install_docker: --check_os  ## Check if docker and docker-compose exists, if not
 	$(call install_docker_pkg)
 	$(call install_pip_pkg_if_not_exist,docker-compose)
 
+.PHONY: install
 install:  ## Check if package exist, if not install the package
 # 	@$(PYTHON) -c "import $(PACKAGE_NAME)" >/dev/null 2>&1 ||
 	$(PYTHON) -m pip install .;
@@ -161,6 +162,7 @@ venv:  ## Create virtualenv environment on local directory.
 # ------------------------------------ Builds  -------------------------------------------
 
 # You can easily chain a number of targets
+.PHONY: bootstrap
 bootstrap: clean install-hooks dev docs  ## Installs development packages, hooks and generate docs for development
 
 .SILENT: lint_docker_image build_docker_image
@@ -191,9 +193,10 @@ lint:  ## Check style with `flake8` and `mypy`
 	# @$(PYTHON) -m mypy
 	# @yamllint .
 
+.PHONY: checkmake
 checkmake:  ## Check Makefile style with `checkmake`
-	$(call install_docker_pkg)
-	docker run --rm -v $(CURDIR):/data cytopia/checkmake Makefile
+	@$(call install_docker_pkg)
+	@docker run --rm -v $(CURDIR):/data cytopia/checkmake Makefile
 
 formatter:  ## Format style with `black` and sort imports with `isort`
 	$(call install_pip_pkg_if_not_exist,black,isort)

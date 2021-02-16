@@ -102,11 +102,11 @@ define create-venv
 
 	@if [ ! -d ".$(PACKAGE_NAME)_venv" ]; then \
 		$(PYTHON) -m virtualenv ".$(PACKAGE_NAME)_venv" -p $(PYTHON) -q; \
-		.$(PACKAGE_NAME)_venv/bin/python -m pip install -U pip; \
+		.$(PACKAGE_NAME)_venv/bin/python -m pip install -qU pip; \
 		echo "\".$(PACKAGE_NAME)_venv\": Created successfully!"; \
 	fi;
 	@echo "Source virtual environment before tinkering"
-	@echo "Manually run: \`source .$(PACKAGE_NAME)_venv/bin/activate\`"
+	@echo -e "\tRun: \`source .$(PACKAGE_NAME)_venv/bin/activate\`"
 endef
 
 define add-gitignore

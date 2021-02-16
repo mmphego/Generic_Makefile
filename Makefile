@@ -134,6 +134,8 @@ boilerplate:  ## Add simple 'README.md' and .gitignore
 	@echo "# $(PACKAGE_NAME)" | sed 's/_/ /g' >> README.md
 	@$(call add-gitignore)
 
+# ------------------------------------ Version Control -----------------------------------
+
 git_init_repo:  ## Create a new git repository and add boilerplate code.
 	@git init -q
 	@$(MAKE) -C $(CURDIR) boilerplate

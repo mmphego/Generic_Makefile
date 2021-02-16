@@ -134,6 +134,12 @@ boilerplate:  ## Add simple 'README.md' and .gitignore
 	@echo "# $(PACKAGE_NAME)" | sed 's/_/ /g' >> README.md
 	@$(call add-gitignore)
 
+git_init_repo:  ## Create a new git repository and add boilerplate code.
+	@git init -q
+	@$(MAKE) -C $(CURDIR) boilerplate
+	@git add .gitignore README.md
+	git commit -nm'Add README and .gitignore files <automated msg>'
+
 # ------------------------------------ Installations -------------------------------------
 
 dev_venv: venv ## Install the package in development mode including all dependencies inside a virtualenv (container).

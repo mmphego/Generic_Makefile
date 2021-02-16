@@ -16,6 +16,10 @@ Please use `make <target>` where <target> is one of
 
 boilerplate          - Add simple 'README.md' and .gitignore
 
+# ------------------------------------ Version Control -----------------------------------
+
+git_init_repo        - Create a new git repository and add boilerplate code.
+
 # ------------------------------------ Installations -------------------------------------
 
 dev_venv             - Install the package in development mode including all dependencies inside a virtualenv (container).

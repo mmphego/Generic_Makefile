@@ -1,5 +1,5 @@
 # Generic Makefile
-An over-engineered `Makefile` for my Python projects.
+An over-engineered `Makefile` template for my Python projects.
 
 ## Download
 

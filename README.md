@@ -5,7 +5,7 @@ An over-engineered `Makefile` template for my Python projects.
 
 Run `curl -fsSL https://git.io/get-makefile > Makefile` from your root directory
 or add `get_makefile` alias into your `,bashrc`:
-- `echo "alias get_makefile='curl -fsSL https://git.io/get-makefile > ./Makefile'" | tee -a ~/.bashrc'
+- `echo "alias get_makefile='curl -fsSL https://git.io/get-makefile > ./Makefile'" | tee -a ~/.bashrc`
 - `source ~/.bashrc` 
 
 ## Usage
